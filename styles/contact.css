@@ -114,10 +114,9 @@ fieldset {
     color: var(--text-primary-color, black);
 }
 
-#contact-form :is( input, textarea):required:placeholder-shown {
+#contact-form :is(input, textarea):required:placeholder-shown {
     background-color: var(--form-input-background-color, #fcfafc);
 }
-
 
 .flash {
     animation: flash 1.5s ease-in-out;
@@ -197,4 +196,3 @@ fieldset {
         padding: 0.8rem 1rem;
     }
 }
-

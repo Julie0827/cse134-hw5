@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const formErrorsField = document.getElementById("form-errors");
     const clearBtn = document.querySelector(".clear-btn");
 
-    const backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--form-input-background-color');
     const mainColor = getComputedStyle(document.documentElement).getPropertyValue('--main-color');
 
     let form_errors = [];
@@ -76,20 +75,18 @@ document.addEventListener("DOMContentLoaded", function () {
             charCounter.style.color = "#fc1225";
             commentsField.style.backgroundColor = "rgba(255, 0, 0, 0.1)";
 
-        } else {
+        } else if (remaining > 30 && remaining < maxChars) {
             charCounter.style.color = mainColor;
             commentsField.style.backgroundColor = "transparent";
-        }
-
-        if (remaining == maxChars) {
-            commentsField.style.backgroundColor = backgroundColor;
+        } else {
+            commentsField.style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--form-input-background-color');
         }
     });
 
     clearBtn.addEventListener("click", function () {
         charCounter.textContent = `${maxChars} characters`;
         charCounter.style.color = mainColor;
-        commentsField.style.backgroundColor = backgroundColor;
+        commentsField.style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--form-input-background-color');
     });
 
     nameField.addEventListener("input", () => nameField.setCustomValidity(""));
@@ -146,5 +143,11 @@ document.addEventListener("DOMContentLoaded", function () {
             formErrorsField.value = JSON.stringify(form_errors);
             form_errors = [];
         }
+    });
+
+    const toggle = document.querySelector(".toggle-container");
+
+    toggle.addEventListener("click", function () {
+        commentsField.style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--form-input-background-color');
     });
 });
