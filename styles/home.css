@@ -1,0 +1,81 @@
+@import url("variables.css");
+
+#my-name {
+    color: var(--main-color, pink);
+}
+
+#main-page-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#main-page-container hgroup {
+    width: 53%;
+}
+
+#main-page-image-container {
+    position: relative;
+    display: flex;
+    width: 42%;
+    justify-content: center;
+    align-items: center;
+}
+
+#main-img {
+    width: 80%;
+}
+
+#main-img img {
+    width: 100%;
+    animation: bounce 2s linear infinite;
+}
+
+#main-page-image-container .sub-img {
+    width: 17%;
+    position: absolute;
+}
+
+#main-page-image-container .top-left {
+    width: 12%;
+    top: 7%;
+    left: 10%;
+    animation: grow-shrink 2s linear infinite;
+}
+
+#main-page-image-container .top-right {
+    top: 10%;
+    right: 13%;
+    animation: bounce-swing 2s linear infinite;
+}
+
+#main-page-image-container .bottom-left {
+    bottom: 45%;
+    left: 2%;
+    animation: rotate-left 2s linear infinite;
+}
+
+#main-page-image-container .bottom-right {
+    bottom: 45%;
+    right: 10%;
+    animation: rotate-right 2.5s linear infinite;
+}
+
+
+@media (max-width: 800px) {
+    #main-page-container {
+        gap: 60px;
+    }
+
+    #main-page-container {
+        flex-direction: column-reverse;
+    }
+
+    #main-page-image-container {
+        width: 70%;
+    }
+
+    #main-page-container hgroup {
+        width: 100%;
+    }
+}

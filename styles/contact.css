@@ -1,0 +1,200 @@
+@import url("animations.css");
+@import url("variables.css");
+
+#contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+}
+
+#contact-container hgroup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contact-container hgroup > p {
+    font-size: 1.2rem;
+}
+
+#contact-container address {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+my-contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 4%;
+    width: 31%;
+    color: var(--const-text-primary-color, black);
+}
+
+my-contact p {
+    width: 60%;
+    padding: 2em 0;
+    text-align: center;
+    font-size: 1rem;
+}
+
+my-contact > a {
+    display: flex;
+    justify-content: flex-start;
+    width: 40%;
+}
+
+my-contact a img {
+    width: 85%;
+    animation: bounce 2s linear infinite;
+}
+
+my-contact p a {
+    font-weight: bold;
+    color: var(--main-color-dark,black);
+}
+
+my-contact[data-contact="github"] {
+    background-color: #e9cffa;
+}
+
+my-contact[data-contact="linkedin"] {
+    background-color: #cae3fa;
+}
+
+my-contact[data-contact="email"] {
+    background-color: #faedac;
+}
+
+#contact-form {
+    box-sizing: border-box;
+    background-color: var(--background-color-secondary);
+    width: max(50%, 600px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 3rem;
+    box-shadow: var(--shadow-form, none);
+}
+
+fieldset {
+    border: none;
+}
+
+.form-field {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.required-indicator {
+    color: red;
+    margin-left: 0.2em;
+}
+
+#contact-form label {
+    text-align: right;
+    font-weight: bold;
+    color: var(--text-primary-color, black);
+}
+
+#contact-form input,
+#contact-form textarea {
+    background-color: transparent;
+    width: 100%;
+    padding: 0.7rem 0.7rem;
+    border: 1px solid var(--main-color-dark, hotpink);
+    border-radius: 0.5rem;
+    color: var(--text-primary-color, black);
+}
+
+#contact-form :is( input, textarea):required:placeholder-shown {
+    background-color: var(--form-input-background-color, #fcfafc);
+}
+
+
+.flash {
+    animation: flash 1.5s ease-in-out;
+}
+
+#error-messages-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.error-message {
+    color: var(--warning-color, red);
+}
+
+.info-message, .error-message {
+    text-align: center;
+}
+
+.info-message {
+    color: var(--text-primary-color, black);
+}
+
+#char-counter {
+    color: var(--main-color, pink);
+    font-weight: bold;
+}
+
+#contact-form .form-buttons-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.clear-btn {
+    color: var(--warning-color, red);
+    text-decoration: underline;
+    background-color: transparent;
+    border: none;
+    font-size: 0.75rem;
+}
+
+@media (max-width: 800px) {
+    address {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    my-contact {
+        width: 60%;
+        padding: 0 8%;
+    }
+
+    my-contact a img {
+        width: 75%;
+    }
+
+    #contact-form {
+        width: 95%;
+    }
+}
+
+@media (max-width: 600px) {
+    #contact-form .form-buttons-container {
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 450px) {
+    #contact-form .form-buttons-container {
+        justify-content: space-around;
+    }
+
+    #contact-form .btn {
+        padding: 0.8rem 1rem;
+    }
+}
+

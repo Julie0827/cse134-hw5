@@ -1,0 +1,118 @@
+@import url("variables.css");
+
+#projects-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3em;
+}
+
+#project-nav {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    flex-flow: row nowrap;
+    gap: 3rem;
+    padding-bottom: 4em;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+#project-nav a {
+    text-decoration: none;
+    color: var(--main-color, pink);
+}
+
+#project-nav a:hover {
+    text-decoration: underline;
+}
+
+#projects-container h2 {
+    font-size: 2.2rem;
+}
+
+#projects {
+    display: flex;
+    flex-direction: column;
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    padding: 8em 0;
+    border-bottom: 2px solid var(--main-color-light);
+}
+
+.project:first-child {
+    border-top: 2px solid var(--main-color-light);
+}
+
+.project picture {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.project picture img {
+    width: 70%;
+}
+
+.top-btn {
+    color: var(--main-color, black);
+    text-decoration: underline;
+    background-color: transparent;
+    border: none;
+    font-size: 1rem;
+}
+
+.repo-btn {
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.7rem 1rem;
+    text-decoration: none;
+    background: var(--gradient-primary);
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-button, none);
+    font-size: 1rem;
+}
+
+.repo-btn:hover {
+    box-shadow: var(--shadow-button-hover, none);
+}
+
+.repo-btn:active {
+    background: var(--gradient-secondary);
+    box-shadow: var(--shadow-button-active, none);
+}
+
+.repo-btn::before {
+    content: "";
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-image: url("../assets/images/github-cat.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@media (max-width: 1000px) {
+    .project picture img {
+        width: 90%;
+    }
+}
+
+@media (max-width: 800px) {
+    .repo-btn {
+        align-self: center;
+    }
+
+    .project picture img {
+        width: 90%;
+    }
+}
