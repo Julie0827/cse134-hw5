@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles/projects.css" media="screen" type="text/css">
     <script src="scripts/search.js" defer></script>
     <script src="scripts/main.js" defer></script>
+    <script src="scripts/project-local-storage-setup.js" defer></script>
     <script src="scripts/project-card.js" defer></script>
     <script>
         if (localStorage.getItem("darkMode") === "enabled") {
@@ -56,14 +57,16 @@
     </header>
     <main id="projects-container">
         <h1>Projects</h1>
+        <div id="load-buttons">
+            <button id="load-local" class="btn">Load Local</button>
+            <button id="load-remote" class="btn">Load Remote</button>
+        </div>
         <nav id="project-nav">
             <a href="#project1">Project 1</a>
             <a href="#project2">Project 2</a>
             <a href="#project3">Project 3</a>
         </nav>
-        <div id="projects">
-            <project-card></project-card>
-        </div>
+        <div id="projects"></div>
     </main>
     <aside class="search-sidebar">
         <div class="search-results-container"></div>
