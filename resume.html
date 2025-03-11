@@ -7,8 +7,8 @@
     <link rel="icon" href="assets/images/favicon.png" type="image/png">
     <link rel="stylesheet" href="styles/style.css" media="screen" type="text/css">
     <link rel="stylesheet" href="styles/resume.css" media="screen" type="text/css">
-    <script src="scripts/search.js"></script>
-    <script src="scripts/main.js"></script>
+    <script src="scripts/search.js" defer></script>
+    <script src="scripts/main.js" defer></script>
     <script>
         if (localStorage.getItem("darkMode") === "enabled") {
             document.documentElement.classList.add("dark-mode");
@@ -58,7 +58,6 @@
             <h1>My Resume</h1>
             <p>Feel free to download my resume if you're interested.</p>
         </hgroup>
-        <iframe src="assets/pdf/resume_Julie.pdf"></iframe>
         <a  class="btn" href="assets/pdf/resume_Julie.pdf" download="resume_Julie.pdf">Download</a>
     </main>
     <aside class="search-sidebar">
