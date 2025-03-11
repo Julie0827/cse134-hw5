@@ -1,11 +1,14 @@
 :root {
     --background-color: #faf7fa;
     --background-color-secondary: white;
+
     --main-color: #f09da8;
     --main-color-light: #f5c6cc;
     --main-color-dark: #e58693;
+
     --text-primary-color: #202020;
     --const-text-primary-color: #202020;
+
     --warning-color: #fc1225;
     --hightlight-background-color: yellow;
     --highlight-text-color: #e8028c;
@@ -38,15 +41,19 @@
 .dark-mode {
     --background-color: #202020;
     --background-color-secondary: #282828;
+
     --text-primary-color: white;
-    --shadow-form: 0 1px 5px 0 rgba(0, 0, 0, 1);
-    --shadow-search: 0 3px 10px rgba(0, 0, 0, 1);
+
     --highlight-background-color: #696969;
     --hover-background-color: #404040;
     --form-input-background-color:#383838;
     --toggle-background-color: #404040;
     --sun-moon-color: #f7f7fa;
-    --toggle-translate-x-value: 1.35rem;
+
+    --shadow-form: 0 1px 5px 0 rgba(0, 0, 0, 1);
+    --shadow-search: 0 3px 10px rgba(0, 0, 0, 1);
     --shadow-circle: 0.2rem 0 0.3rem rgba(9, 9, 31, 0.1), -0.2rem 0 0.3rem rgba(9, 9, 31, 0.1);
     --shadow-sun-moon: 0 0.1rem 0 rgba(222, 222, 227, 0.6), 0 0.2rem 0 rgba(128, 128, 128, 0.5), inset 0 0.1rem 0 white;
+
+    --toggle-translate-x-value: 1.35rem;
 }
