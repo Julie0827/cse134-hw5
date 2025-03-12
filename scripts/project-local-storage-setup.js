@@ -1,4 +1,4 @@
-if (!localStorage.getItem("projects")) {
+if (!localStorage.getItem('projects')) {
     const Projects = [
         {
             id: "project1",
@@ -68,5 +68,5 @@ if (!localStorage.getItem("projects")) {
         }
     ];
 
-    localStorage.setItem("projects", JSON.stringify(Projects));
+    localStorage.setItem('projects', JSON.stringify(Projects));
 }

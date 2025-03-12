@@ -6,14 +6,14 @@ class ProjectCard extends HTMLElement {
 
         this.id = project.id;
 
-        const title = document.createElement("h2");
+        const title = document.createElement('h2');
         title.textContent = project.title;
 
-        const languageList = document.createElement("ul");
+        const languageList = document.createElement('ul');
 
         project.languages.forEach(language => {
-            const li = document.createElement("li");
-            const lang = language.toLowerCase().replace(/\+/g, "p");
+            const li = document.createElement('li');
+            const lang = language.toLowerCase().replace(/\+/g, 'p');
 
             li.textContent = language;
             li.style.backgroundColor = `var(--color-lang-${lang})`;
@@ -21,24 +21,24 @@ class ProjectCard extends HTMLElement {
             languageList.appendChild(li);
         });
 
-        const repoLink = document.createElement("a");
-        repoLink.classList.add("repo-btn");
-        repoLink.target = "_blank";
-        repoLink.textContent = "GitHub Repository";
+        const repoLink = document.createElement('a');
+        repoLink.classList.add('repo-btn');
+        repoLink.target = '_blank';
+        repoLink.textContent = 'GitHub Repository';
         repoLink.href = project.repo;
 
 
-        const picture = document.createElement("picture");
+        const picture = document.createElement('picture');
 
-        const sourceLarge = document.createElement("source");
-        sourceLarge.media = "(min-width: 1000px)";
+        const sourceLarge = document.createElement('source');
+        sourceLarge.media = '(min-width: 1000px)';
         sourceLarge.srcset = project.imgL;
 
-        const sourceMedium = document.createElement("source");
-        sourceMedium.media = "(min-width: 600px)";
+        const sourceMedium = document.createElement('source');
+        sourceMedium.media = '(min-width: 600px)';
         sourceMedium.srcset = project.imgM;
 
-        const img = document.createElement("img");
+        const img = document.createElement('img');
         img.src = project.imgS;
         img.alt = project.alt;
 
@@ -46,13 +46,13 @@ class ProjectCard extends HTMLElement {
         picture.appendChild(sourceMedium);
         picture.appendChild(img);
 
-        const description = document.createElement("p");
+        const description = document.createElement('p');
         description.textContent = project.description;
 
-        const topLink = document.createElement("a");
-        topLink.href = "#top";
-        topLink.classList.add("top-btn");
-        topLink.textContent = "Go to Top";
+        const topLink = document.createElement('a');
+        topLink.href = '#top';
+        topLink.classList.add('top-btn');
+        topLink.textContent = 'Go to Top';
 
         this.appendChild(title);
         this.appendChild(languageList);
@@ -63,12 +63,12 @@ class ProjectCard extends HTMLElement {
     }
 
     isProjectDataValid(project) {
-        if (!project || typeof project !== "object") {
+        if (!project || typeof project !== 'object') {
             console.error(`Invalid project data: ${project}`);
             return false;
         }
 
-        const requiredFields = ["id", "title", "languages", "repo", "imgL", "imgM", "imgS", "alt", "description"];
+        const requiredFields = ['id', 'title', 'languages', 'repo', 'imgL', 'imgM', 'imgS', 'alt', 'description'];
         
         for (const field of requiredFields) {
             if (!project[field]) {
@@ -76,14 +76,14 @@ class ProjectCard extends HTMLElement {
                 return false;
             }
 
-            if (field === "languages") {
-                if (typeof project[field] !== "object" || project[field].length === 0) {
+            if (field === 'languages') {
+                if (typeof project[field] !== 'object' || project[field].length === 0) {
                     console.error(`Invalid data in the ${field} field.`)
                     return false;
                 }
 
             } else {
-                if (typeof project[field] !== "string" || project[field].trim().length === 0) {
+                if (typeof project[field] !== 'string' || project[field].trim().length === 0) {
                     console.error(`Invalid data in the ${field} field.`)
                     return false;
                 } 
@@ -94,4 +94,4 @@ class ProjectCard extends HTMLElement {
     }
 }
 
-customElements.define("project-card", ProjectCard);
+customElements.define('project-card', ProjectCard);
