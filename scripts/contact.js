@@ -4,12 +4,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const emailField = document.getElementById("email");
     const commentsField = document.getElementById("comments");
     const botField = document.getElementById("bot-field");
-    const formErrorsField = document.getElementById("form-errors");
     const clearBtn = document.querySelector(".clear-btn");
 
     const mainColor = getComputedStyle(document.documentElement).getPropertyValue('--main-color');
-
-    let form_errors = [];
 
     contactForm.addEventListener("click", function () {
         botField.value = "false";
@@ -21,8 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const regexAllowed = {
         name: /^[A-Za-zÀ-ÖØ-öø-ÿ' -]+$/,
-        email: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~@-]+$/,
-        comments: /^[\w\sÀ-ÖØ-öø-ÿ.,!?'"^*+/=(){|}\[\]\\<>:;~&@#%\$-]+$/
+        email: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~@-]+$/
     }
 
     let flashTimeouts = {};
@@ -35,9 +31,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (input.value && !rx.test(input.value)) {
             const invalidChar = [...input.value].find(char => !new RegExp(rx).test(char));
-            form_errors.push({ field: input.name, errorType: "invalidCharacter", errorDescription: `User typed invalid character '${invalidChar}' in the ${input.name} field.` });
             
-            errorOutput.textContent = `Invalid character "${invalidChar}" detected in ${fieldName} field.`;
+            errorOutput.textContent = `Invalid character "${invalidChar}" detected.`;
             errorOutput.classList.remove("hidden");
 
             input.classList.remove("flash");
@@ -63,30 +58,24 @@ document.addEventListener("DOMContentLoaded", function () {
     const charCounter = document.getElementById("char-counter");
     const maxChars = 300;
 
-    charCounter.textContent = `${maxChars} characters`;
+    charCounter.textContent = maxChars;
 
     commentsField.addEventListener("input", function () {
         const currLength = commentsField.value.length;
         const remaining = maxChars - currLength;
 
-        charCounter.textContent = `${remaining} characters`;
+        charCounter.textContent = remaining;
 
         if (remaining <= 30) {
             charCounter.style.color = "#fc1225";
-            commentsField.style.backgroundColor = "rgba(255, 0, 0, 0.1)";
-
-        } else if (remaining > 30 && remaining < maxChars) {
-            charCounter.style.color = mainColor;
-            commentsField.style.backgroundColor = "transparent";
         } else {
-            commentsField.style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--form-input-background-color');
+            charCounter.style.color = mainColor;
         }
     });
 
     clearBtn.addEventListener("click", function () {
-        charCounter.textContent = `${maxChars} characters`;
+        charCounter.textContent = maxChars;
         charCounter.style.color = mainColor;
-        commentsField.style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--form-input-background-color');
     });
 
     nameField.addEventListener("input", () => nameField.setCustomValidity(""));
@@ -102,11 +91,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (nameField.validity.valueMissing) {
             nameField.setCustomValidity("Oops! The name field cannot be empty. 😧");
-            form_errors.push({ field: "name", errorType: "valueMissing", errorDescription: "User tried to submit with an empty name field." })
             isValid = false;
         } else if (nameField.validity.tooShort) {
             nameField.setCustomValidity("Too short! 🌟 Your name needs at least 2 characters.");
-            form_errors.push({ field: "name", errorType: "tooShort", errorDescription: `User tried to submit a too short name (length: ${nameField.value.length}). Minimum 2 characters required.` })
             isValid = false;
         } else {
             nameField.setCustomValidity("");
@@ -114,11 +101,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (emailField.validity.valueMissing) {
             emailField.setCustomValidity("Looks like you forgot to add your email. 💌");
-            form_errors.push({ field: "email", errorType: "valueMissing", errorDescription: "User tried to submit with an empty email field." })
             isValid = false;
         } else if (emailField.validity.typeMismatch) {
             emailField.setCustomValidity("Hmm..🤔 Please enter a valid email address. (e.g., name@example.com)");
-            form_errors.push({ field: "email", errorType: "invalidFormat", errorDescription: `User tried to submit an invalid email format: ${emailField.value}` })
             isValid = false;
         } else {
             emailField.setCustomValidity("");
@@ -126,11 +111,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (commentsField.validity.valueMissing) {
             commentsField.setCustomValidity("Don't forget to leave a comment! 💭");
-            form_errors.push({ field: "comments", errorType: "valueMissing", errorDescription: "User tried to submit with an empty comments field." })
             isValid = false;
         } else if (commentsField.validity.tooShort) {
             commentsField.setCustomValidity("Too short! ✏️ Your comment needs at least 10 characters.")
-            form_errors.push({ field: "comments", errorType: "tooShort", errorDescription: `User tried to submit a too short comment (length: ${commentsField.value.length}). Minimum 10 characters required.` })
             isValid = false;
         } else {
             commentsField.setCustomValidity("")
@@ -139,15 +122,6 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!isValid) {
             e.preventDefault();
             contactForm.reportValidity();
-        } else {
-            formErrorsField.value = JSON.stringify(form_errors);
-            form_errors = [];
         }
-    });
-
-    const toggle = document.querySelector(".toggle-container");
-
-    toggle.addEventListener("click", function () {
-        commentsField.style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--form-input-background-color');
     });
 });

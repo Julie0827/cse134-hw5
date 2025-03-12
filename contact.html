@@ -88,28 +88,22 @@
             <fieldset class="form-field">
                 <label for="name">Name<span class="required-indicator">*</span></label>
                 <input type="text" id="name" name="name" required minlength="2" maxlength="50" placeholder="Enter your name">
+                <output id="name-error" class="error-message hidden"></output>
             </fieldset>
             
             <fieldset class="form-field">
                 <label for="email">Email<span class="required-indicator">*</span></label>
                 <input type="email" id="email" name="email" required maxlength="100" placeholder="Enter your email">
+                <output id="email-error" class="error-message hidden"></output>
             </fieldset>
 
             <fieldset class="form-field">
                 <label for="comments">Comments<span class="required-indicator">*</span></label>
                 <textarea id="comments" name="comments" rows="5" required minlength="10" maxlength="300" placeholder="Your message here..."></textarea>
+                <output id="comments-info"><span id="char-counter"></span> / 300</output>
             </fieldset>
 
             <input type="hidden" id="bot-field" name="possible_bot" value="true">
-            <input type="hidden" id="form-errors" name="form-errors">
-
-            <div id="error-messages-container">
-                <output id="name-error" class="error-message hidden"></output>
-                <output id="email-error" class="error-message hidden"></output>
-                <output id="comments-error" class="error-message hidden"></output>
-            </div>
-
-            <output id="comments-info" class="info-message">You have <span id="char-counter"></span> left in the comments field.</output>
 
             <div class="form-buttons-container">
                 <button type="reset" class="clear-btn">Clear</button>

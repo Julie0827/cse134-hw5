@@ -91,6 +91,7 @@ fieldset {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
+    position: relative;
 }
 
 .required-indicator {
@@ -122,27 +123,28 @@ fieldset {
     animation: flash 1.5s ease-in-out;
 }
 
-#error-messages-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-}
-
 .error-message {
     color: var(--warning-color, red);
 }
 
-.info-message, .error-message {
+.error-message {
     text-align: center;
+    position: absolute;
+    right: 0;
+    bottom: -1.2rem;
 }
 
-.info-message {
-    color: var(--text-primary-color, black);
+.error-message, #comments-info {
+    font-size: 0.8rem;
+}
+
+#comments-info {
+    color: var(--main-color, pink);
+    align-self: flex-end;
+    margin-right: 1rem;
 }
 
 #char-counter {
-    color: var(--main-color, pink);
     font-weight: bold;
 }
 
