@@ -181,13 +181,17 @@ fieldset {
     my-contact {
         width: 70%;
     }
-    
+
     #contact-form .form-buttons-container {
         justify-content: space-around;
     }
 }
 
 @media (max-width: 450px) {
+    my-contact {
+        width: 80%;
+    }
+
     #contact-form .btn {
         padding: 0.8rem 1rem;
     }
