@@ -9,8 +9,8 @@
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="Julie's Portfolio">
     <meta property="og:description" content="Explore my portfolio featuring web development, programming projects, and computer science skills.">
-    <meta property="og:image" content="https://julieportfoliooo.netlify.app/assets/images/preview.png">
-    <meta property="og:url" content="https://julieportfoliooo.netlify.app/">
+    <meta property="og:image" content="https://julieee5.netlify.app/assets/images/preview.png">
+    <meta property="og:url" content="https://julieee5.netlify.app/">
     <meta property="og:type" content="website">
     <title>Julie</title>
     <link rel="icon" href="assets/images/favicon.png" type="image/png">
@@ -24,6 +24,7 @@
     <link rel="preload" as="image" type="image/png" href="assets/images/books.png">
     <link rel="preload" as="image" type="image/png" href="assets/images/ice-cream.png">
     <link rel="preload" as="image" type="image/png" href="assets/images/gamepad.png">
+    <script src="scripts/custom-elements.js" defer></script>
     <script src="scripts/search.js" defer></script>
     <script src="scripts/main.js" defer></script>
     <script>
@@ -37,20 +38,7 @@
         <p>⚠️ JavaScript is disabled. Please enable it for the best experience, including theme switching, music player controls, and search functionality. ⚠️</p>
     </noscript>
     <header>
-        <nav class="main-nav">
-            <a class="logo" href="index.html">
-                <img src="assets/images/logo.png" alt="Logo">
-            </a>
-            <a class="nav-link active" href="index.html">Home</a>
-            <a class="nav-link" href="about.html">About Me</a>
-            <a class="nav-link" href="projects.html">Projects</a>
-            <a class="nav-link" href="resume.html">Resume</a>
-            <a class="nav-link" href="contact.html">Contact</a>
-
-            <input type="text" class="search-box" placeholder="Search...">
-
-            <img class="dropdown-nav-btn" src="assets/images/hamburger.svg" alt="Open navigation menu">
-        </nav>
+        <main-nav data-current="index"></main-nav>
         <div class="setting">
             <audio controls loop>
                 <source src="assets/audio/background_audio.mp3" type="audio/mpeg">

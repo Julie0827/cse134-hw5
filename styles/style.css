@@ -86,7 +86,7 @@ header {
     align-items: stretch;
 }
 
-.main-nav {
+main-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
