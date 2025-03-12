@@ -163,9 +163,9 @@ fieldset {
     }
 
     my-contact {
-        width: 80%;
+        width: 60%;
         height: 8rem;
-        padding: 0 15%;
+        padding: 0 10%;
     }
 
     my-contact p {
@@ -178,16 +178,16 @@ fieldset {
 }
 
 @media (max-width: 600px) {
+    my-contact {
+        width: 70%;
+    }
+    
     #contact-form .form-buttons-container {
         justify-content: space-around;
     }
 }
 
 @media (max-width: 450px) {
-    my-contact {
-        padding: 0 10%;
-    }
-
     #contact-form .btn {
         padding: 0.8rem 1rem;
     }
