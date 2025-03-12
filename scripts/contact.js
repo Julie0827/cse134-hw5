@@ -25,7 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function handleInvalidChar(e) {
         const input = e.target;
-        const fieldName = input.name.charAt(0).toUpperCase() + input.name.slice(1);
         const rx = regexAllowed[input.id];
         const errorOutput = document.getElementById(`${input.id}-error`);
 
@@ -51,9 +50,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    document.getElementById("name").addEventListener("input", handleInvalidChar);
-    document.getElementById("email").addEventListener("input", handleInvalidChar);
-    document.getElementById("comments").addEventListener("input", handleInvalidChar);
+    nameField.addEventListener("input", handleInvalidChar);
+    emailField.addEventListener("input", handleInvalidChar);
 
     const charCounter = document.getElementById("char-counter");
     const maxChars = 300;
