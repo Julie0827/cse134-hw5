@@ -17,7 +17,7 @@ noscript p {
     text-align: center;
 }
 
-html.no-js settings-panel {
+html.no-js .setting {
     display: none !important;
 }
 
@@ -86,7 +86,7 @@ header {
     align-items: stretch;
 }
 
-main-nav {
+.main-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -172,7 +172,7 @@ main-nav {
     background-size: 1.3rem;
 }
 
-settings-panel {
+.setting {
     margin-top: 1rem;
     display: flex;
     justify-content: space-between;
@@ -539,7 +539,7 @@ h2 {
         display: none;
     }
 
-    settings-panel {
+    .setting {
         margin-top: 2rem;
     }
 

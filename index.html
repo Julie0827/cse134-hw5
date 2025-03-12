@@ -24,7 +24,6 @@
     <link rel="preload" as="image" type="image/png" href="assets/images/books.png">
     <link rel="preload" as="image" type="image/png" href="assets/images/ice-cream.png">
     <link rel="preload" as="image" type="image/png" href="assets/images/gamepad.png">
-    <script src="scripts/custom-elements.js" defer></script>
     <script src="scripts/search.js" defer></script>
     <script src="scripts/main.js" defer></script>
     <script>
@@ -38,8 +37,38 @@
         <p>⚠️ JavaScript is disabled. Please enable it for the best experience, including theme switching, music player controls, and search functionality. ⚠️</p>
     </noscript>
     <header>
-        <main-nav data-current="index"></main-nav>
-        <settings-panel></settings-panel>
+        <nav class="main-nav">
+            <a class="logo" href="index.html">
+                <img src="assets/images/logo.png" alt="Logo">
+            </a>
+            <a class="nav-link active" href="index.html">Home</a>
+            <a class="nav-link" href="about.html">About Me</a>
+            <a class="nav-link" href="projects.html">Projects</a>
+            <a class="nav-link" href="resume.html">Resume</a>
+            <a class="nav-link" href="contact.html">Contact</a>
+
+            <input type="text" class="search-box" placeholder="Search...">
+
+            <img class="dropdown-nav-btn" src="assets/images/hamburger.svg" alt="Open navigation menu">
+        </nav>
+        <div class="setting">
+            <audio controls loop>
+                <source src="assets/audio/background_audio.mp3" type="audio/mpeg">
+                Sorry, your browser doesn't support this audio.
+            </audio>
+            <button class="play-pause-btn" title="Play Music">
+                <img class="music-background" src="assets/images/music-background.svg" alt="Stars forming a circular pattern">
+                <img class="play-pause-icon" src="assets/images/play.svg" alt="Play Icon">
+            </button>
+
+            <div class="toggle-container" title="Switch to Dark Mode">
+                <div class="inner-container">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle sun-moon"></div>
+                </div>
+            </div>
+        </div>
     </header>
     <main id="main-page-container">
         <hgroup>
