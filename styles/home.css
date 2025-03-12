@@ -89,3 +89,9 @@
         width: 70%;
     }
 }
+
+@media (max-width: 450px) {
+    #main-page-image-container {
+        width: 80%;
+    }
+}
