@@ -307,7 +307,7 @@ h2 {
     color: var(--const-text-primary-color, black);
 }
 
-:is(.btn, .top-btn, .clear-btn) {
+:is(.btn, .top-btn) {
     font-family: var(--font-button, 'Arial', sans-serif);
     font-weight: bold;
     text-transform: uppercase;
@@ -581,11 +581,8 @@ h2 {
         font-size: 1.6rem;
     }
 
-    .btn, .clear-btn {
-        font-size: 0.7rem;
-    }
-
     .btn {
+        font-size: 0.7rem;
         padding: 1rem 2rem;
     }
 }

@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const emailField = document.getElementById('email');
     const commentsField = document.getElementById('comments');
     const botField = document.getElementById('bot-field');
-    const clearBtn = document.querySelector('.clear-btn');
 
     const mainColor = getComputedStyle(document.documentElement).getPropertyValue('--main-color');
 
@@ -69,11 +68,6 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             charCounter.style.color = mainColor;
         }
-    });
-
-    clearBtn.addEventListener('click', function () {
-        charCounter.textContent = maxChars;
-        charCounter.style.color = mainColor;
     });
 
     nameField.addEventListener('input', () => nameField.setCustomValidity(''));

@@ -141,20 +141,6 @@ fieldset {
     font-weight: bold;
 }
 
-#contact-form .form-buttons-container {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.clear-btn {
-    color: var(--warning-color, red);
-    text-decoration: underline;
-    background-color: transparent;
-    border: none;
-    font-size: 0.75rem;
-}
-
 @media (max-width: 800px) {
     address {
         flex-direction: column;
@@ -181,18 +167,10 @@ fieldset {
     my-contact {
         width: 70%;
     }
-
-    #contact-form .form-buttons-container {
-        justify-content: space-around;
-    }
 }
 
 @media (max-width: 450px) {
     my-contact {
         width: 80%;
-    }
-
-    #contact-form .btn {
-        padding: 0.8rem 1rem;
     }
 }
