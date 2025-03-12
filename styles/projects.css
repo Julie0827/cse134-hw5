@@ -55,22 +55,17 @@ project-card:first-child {
     border-top: 2px solid var(--main-color-light);
 }
 
-project-card picture {
+project-card ul {
     display: flex;
-    justify-content: center;
-    width: 100%;
+    gap: 1rem;
+    font-size: 0.8rem;
+    color: white;
+    margin-top: -1.5rem;
 }
 
-project-card picture img {
-    width: 70%;
-}
-
-.top-btn {
-    color: var(--main-color, black);
-    text-decoration: underline;
-    background-color: transparent;
-    border: none;
-    font-size: 1rem;
+project-card ul li {
+    border-radius: 999px;
+    padding: 0.5rem 1rem;
 }
 
 .repo-btn {
@@ -104,6 +99,24 @@ project-card picture img {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+project-card picture {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+project-card picture img {
+    width: 70%;
+}
+
+.top-btn {
+    color: var(--main-color, black);
+    text-decoration: underline;
+    background-color: transparent;
+    border: none;
+    font-size: 1rem;
 }
 
 @media (max-width: 1000px) {

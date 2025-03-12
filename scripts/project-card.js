@@ -13,7 +13,11 @@ class ProjectCard extends HTMLElement {
 
         project.languages.forEach(language => {
             const li = document.createElement("li");
+            const lang = language.toLowerCase().replace(/\+/g, "p");
+
             li.textContent = language;
+            li.style.backgroundColor = `var(--color-lang-${lang})`;
+
             languageList.appendChild(li);
         });
 
@@ -64,7 +68,7 @@ class ProjectCard extends HTMLElement {
             return false;
         }
 
-        const requiredFields = ["title", "languages", "repo", "imgL", "imgM", "imgS", "alt", "description"];
+        const requiredFields = ["id", "title", "languages", "repo", "imgL", "imgM", "imgS", "alt", "description"];
         
         for (const field of requiredFields) {
             if (!project[field]) {
@@ -91,18 +95,3 @@ class ProjectCard extends HTMLElement {
 }
 
 customElements.define("project-card", ProjectCard);
-
-document.addEventListener("DOMContentLoaded", function() {
-    const loadLocal = document.getElementById("load-local");
-    const projectsContainer = document.getElementById("projects");
-    
-    loadLocal.addEventListener("click", function () { 
-        projectsContainer.innerHTML = "";
-        const storedProjects = JSON.parse(localStorage.getItem("projects")) || [];
-
-        storedProjects.forEach(project => {
-            const card = new ProjectCard(project);
-            projectsContainer.appendChild(card);
-        });
-    });
-});

@@ -36,6 +36,14 @@
     --shadow-sun-moon: 0 0.1rem 0 rgba(250, 215, 95, 0.8), 0 0.2rem 0 rgba(128, 128, 128, 0.5), inset 0 0.1rem 0 rgba(255, 255, 200, 0.6);
 
     --toggle-translate-x-value: -1.35rem;
+
+    --color-lang-cpp: #ed37a7;
+    --color-lang-c: #737282;
+    --color-lang-java: #ed8e5a;
+    --color-lang-python: #44aecf;
+    --color-lang-html: #c7305b;
+    --color-lang-css: #9a45c4;
+    --color-lang-javascript: #ded557;
 }
 
 .dark-mode {

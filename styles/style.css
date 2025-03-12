@@ -39,7 +39,7 @@ p {
     font-size: 1.05rem;
 }
 
-ul:has(a) {
+ul {
     list-style: none;
 }
 
