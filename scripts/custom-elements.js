@@ -1,4 +1,4 @@
-class mainNav extends HTMLElement {
+class MainNav extends HTMLElement {
     constructor() {
         super();
         
@@ -39,15 +39,69 @@ class mainNav extends HTMLElement {
         searchBox.classList.add('search-box');
         searchBox.placeholder = 'Search...';
 
-        this.appendChild(searchBox);
-
         const dropdownNavBtn = document.createElement('img');
         dropdownNavBtn.classList.add('dropdown-nav-btn');
         dropdownNavBtn.src = 'assets/images/hamburger.svg';
         dropdownNavBtn.alt = 'Open navigation menu';
 
-        this.appendChild(dropdownNavBtn);
+        this.append(searchBox, dropdownNavBtn);
     }
 }
 
-customElements.define('main-nav', mainNav);
+customElements.define('main-nav', MainNav);
+
+class SettingsPanel extends HTMLElement {
+    constructor() {
+        super();
+
+        const audio = document.createElement('audio');
+        audio.loop = true;
+        audio.autoplay = false;
+
+        const source = document.createElement('source');
+        source.src = 'assets/audio/background_audio.mp3';
+        source.type = 'audio/mpeg';
+
+        audio.appendChild(source);
+
+        const playPauseBtn = document.createElement('button');
+        playPauseBtn.classList.add('play-pause-btn');
+        playPauseBtn.title = 'Play Music';
+        
+        const bgImg = document.createElement('img');
+        bgImg.classList.add('music-background');
+        bgImg.src = 'assets/images/music-background.svg';
+        bgImg.alt = 'Stars forming a circular pattern';
+
+        const playImg = document.createElement('img');
+        playImg.classList.add('play-pause-icon');
+        playImg.src = 'assets/images/play.svg';
+        playImg.alt = 'Play Icon';
+
+        playPauseBtn.append(bgImg, playImg);
+
+        const toggle = document.createElement('div');
+        toggle.classList.add('toggle-container');
+        toggle.title = 'Switch to Dark Mode';
+
+        const inner = document.createElement('div');
+        inner.classList.add('inner-container');
+
+        for (let i = 0; i < 3; i++) {
+            const circle = document.createElement('div');
+            circle.classList.add('circle');
+
+            if (i === 2) {
+                circle.classList.add('sun-moon');
+            }
+
+            inner.appendChild(circle);
+        }
+
+        toggle.appendChild(inner);
+        
+        this.append(audio, playPauseBtn, toggle);
+    }
+}
+
+customElements.define('settings-panel', SettingsPanel);
