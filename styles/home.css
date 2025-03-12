@@ -76,10 +76,16 @@
     }
 
     #main-page-image-container {
-        width: 70%;
+        width: 60%;
     }
 
     #main-page-container hgroup {
         width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    #main-page-image-container {
+        width: 70%;
     }
 }
