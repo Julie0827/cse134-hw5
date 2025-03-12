@@ -27,7 +27,6 @@ class ProjectCard extends HTMLElement {
         repoLink.textContent = 'GitHub Repository';
         repoLink.href = project.repo;
 
-
         const picture = document.createElement('picture');
 
         const sourceLarge = document.createElement('source');
@@ -42,9 +41,7 @@ class ProjectCard extends HTMLElement {
         img.src = project.imgS;
         img.alt = project.alt;
 
-        picture.appendChild(sourceLarge);
-        picture.appendChild(sourceMedium);
-        picture.appendChild(img);
+        picture.append(sourceLarge, sourceMedium, img);
 
         const description = document.createElement('p');
         description.textContent = project.description;
@@ -54,12 +51,7 @@ class ProjectCard extends HTMLElement {
         topLink.classList.add('top-btn');
         topLink.textContent = 'Go to Top';
 
-        this.appendChild(title);
-        this.appendChild(languageList);
-        this.appendChild(repoLink);
-        this.appendChild(picture);
-        this.appendChild(description);
-        this.appendChild(topLink);
+        this.append(title, languageList, repoLink, picture, description, topLink);
     }
 
     isProjectDataValid(project) {
