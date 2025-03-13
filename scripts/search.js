@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    const pageCache = [];
+    const pageCache = {};
 
     for (let page of pages) {
         fetchPageContent(page);
