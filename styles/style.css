@@ -35,10 +35,6 @@ p {
     line-height: 1.5;
 }
 
-.nav-link {
-    font-size: 1.05rem;
-}
-
 ul {
     list-style: none;
 }
@@ -68,6 +64,7 @@ main {
 
 .logo img {
     width: 8vw;
+    min-width: 80px;
     transition: transform 0.2s ease-in-out;
 }
 
@@ -83,7 +80,7 @@ header {
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: stretch;
+    gap: 1rem;
 }
 
 .main-nav {
@@ -93,14 +90,15 @@ header {
 }
 
 .nav-link {
+    font-size: 1.05rem;
     text-decoration: none;
     color: var(--text-primary-color, black);
-    padding: 0.7em 1em;
+    padding: 0.7rem 1rem;
 }
 
 .nav-link:hover {
     background-color: white;
-    border-radius: 10em;
+    border-radius: 10rem;
     color: var(--main-color, pink);
 }
 
@@ -173,7 +171,6 @@ header {
 }
 
 .setting {
-    margin-top: 1rem;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -537,16 +534,8 @@ h2 {
         font-size: 17.5px;
     }
 
-    .logo {
-        display: none;
-    }
-
-    .setting {
-        margin-top: 2rem;
-    }
-
     .search-sidebar {
-        top: 5rem;
+        top: 5.5rem;
     }
 }
 
@@ -561,20 +550,27 @@ h2 {
         font-size: 18px;
     }
 
-    .nav-link {
-        display: none;
+    .main-nav {
+        flex-wrap: wrap;
+        gap: 1rem 0;
     }
 
-    .dropdown-nav-btn {
-        display: block;
+    .setting {
+        margin: -3.8rem 0 2rem;
+        pointer-events: none;
+    }
+
+    .setting * {
+        pointer-events: auto;
     }
 
     .search-box {
-        width: clamp(100px, 60%, 320px);
+        width: clamp(100px, 50%, 320px);
     }
 
     .search-sidebar {
-        left: 20px;
+        left: 1rem;
+        top: 10rem;
         width: 75%;
         height: 60%;
     }
@@ -593,6 +589,28 @@ h2 {
     html {
         font-size: 17px;
     }
+
+    .main-nav {
+        padding: 1rem 1rem 0;
+        gap: 2rem 0;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .nav-link:hover {
+        border-radius: 0.5rem;
+    }
+
+    .search-sidebar {
+        left: 2rem;
+        top: 9.5rem;
+    }
+
+    .setting {
+        padding: 0 1rem;
+    }
 }
 
 @media (max-width: 600px) {
@@ -600,7 +618,40 @@ h2 {
         font-size: 16px;
     }
 
+    .nav-link {
+        padding: 0.35rem 0.5rem;
+    }
+
     .search-sidebar img {
         width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-link {
+        display: none;
+    }
+
+    .search-sidebar {
+        top: 5.5rem;
+    }
+
+    .dropdown-nav-btn {
+        display: block;
+    }
+
+    .setting {
+        margin-top: 0;
+        justify-content: space-between;
+    }
+
+    .play-pause-btn {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .play-pause-icon {
+        width: 1.2rem;
+        height: 1.2rem;
     }
 }
