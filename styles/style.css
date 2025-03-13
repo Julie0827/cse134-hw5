@@ -599,13 +599,8 @@ h2 {
         display: none;
     }
 
-    .nav-link:hover {
-        border-radius: 0.5rem;
-    }
-
     .search-sidebar {
         left: 2rem;
-        top: 9.5rem;
     }
 
     .setting {
@@ -619,7 +614,11 @@ h2 {
     }
 
     .nav-link {
-        padding: 0.35rem 0.5rem;
+        padding: 0.4rem 0.6rem;
+    }
+
+    .nav-link:hover {
+        border-radius: 0.5rem;
     }
 
     .search-sidebar img {
