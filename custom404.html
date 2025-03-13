@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found</title>
+    <link rel="icon" href="assets/images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="styles/style.css" media="screen" type="text/css">
+    <link rel="stylesheet" href="styles/custom404.css" media="screen" type="text/css">
+    <script src="scripts/search.js" defer></script>
+    <script>
+        if (localStorage.getItem("darkMode") === "enabled") {
+            document.documentElement.classList.add("dark-mode");
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <a class="logo" href="index.html">
+                <img src="assets/images/logo.png" alt="Logo">
+            </a>
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="about.html">About Me</a>
+            <a class="nav-link" href="projects.html">Projects</a>
+            <a class="nav-link" href="resume.html">Resume</a>
+            <a class="nav-link" href="contact.html">Contact</a>
+
+            <input type="text" class="search-box" placeholder="Search...">
+
+            <img class="dropdown-nav-btn" src="assets/images/hamburger.svg" alt="Open navigation menu">
+        </nav>
+    </header>
+    <main id="custom-404-page">
+        <hgroup>
+            <h1>404 - Page Not Found</h1>
+            <p>Hmm… this page seems lost.</p>
+            <p>You can use the navigation bar or search bar to keep exploring.</p>
+        </hgroup>
+        <picture>
+            <source srcset="assets/images/custom-404-large.png" media="(min-width: 1000px)">
+            <img src="assets/images/custom-404-medium.png" alt="3D illustration of a girl sitting on large 404 numbers">
+        </picture>
+    </main>
+    <aside class="search-sidebar">
+        <div class="search-results-container"></div>
+    </aside>
+    <nav class="dropdown-nav hide">
+        <a class="dropdown-nav-link" href="index.html">Home</a>
+        <a class="dropdown-nav-link active" href="about.html">About Me</a>
+        <a class="dropdown-nav-link" href="projects.html">Projects</a>
+        <a class="dropdown-nav-link" href="resume.html">Resume</a>
+        <a class="dropdown-nav-link" href="contact.html">Contact</a>
+    </nav>
+    <footer>
+        <ul>
+            <li><a href="https://github.com/Julie0827" target="_blank">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/julie-hong-065579298/" target="_blank">LinkedIn</a></li>
+            <li><a href="mailto:joh046@ucsd.edu" target="_blank">joh046@ucsd.edu</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,39 @@
+#custom-404-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+#custom-404-page hgroup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#custom-404-page :is(h1, p) {
+    font-weight: bold;
+    text-align: center;
+}
+
+#custom-404-page h1 {
+    color: var(--main-color, pink);
+}
+
+#custom-404-page p {
+    font-size: 1.3rem;
+}
+
+#custom-404-page picture {
+    width: 60%;
+}
+
+#custom-404-page picture img {
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    #custom-404-page picture {
+        width: 80%;
+    }
+}
