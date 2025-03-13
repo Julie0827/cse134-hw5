@@ -28,13 +28,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    const pageCache = JSON.parse(localStorage.getItem('pageCache')) || {};
-    let isCacheLoaded = Object.keys(pageCache).length === pages.length;
+    const pageCache = [];
 
-    if (!isCacheLoaded) {
-        for (let page of pages) {
-            fetchPageContent(page);
-        }
+    for (let page of pages) {
+        fetchPageContent(page);
     }
 
     async function handleSearchSidebar() {
