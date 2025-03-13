@@ -2,7 +2,7 @@ if (!localStorage.getItem('projects')) {
     const Projects = [
         {
             id: "project1",
-            title: "Project 1 Title",
+            title: "Project 1 Local",
             languages: ["HTML", "CSS", "JavaScript"],
             repo: "https://github.com/Julie0827/cse134-hw5",
             imgL: "../assets/images/thumbnail-large.png",
@@ -13,7 +13,7 @@ if (!localStorage.getItem('projects')) {
         },
         {
             id: "project2",
-            title: "Project 2 Title",
+            title: "Project 2 Local",
             languages: ["C", "Java"],
             repo: "https://github.com/Julie0827/cse134-hw5",
             imgL: "../assets/images/thumbnail-large.png",
@@ -24,7 +24,7 @@ if (!localStorage.getItem('projects')) {
         },
         {
             id: "project3",
-            title: "Project 3 Title",
+            title: "Project 3 Local",
             languages: ["C++", "C"],
             repo: "https://github.com/Julie0827/cse134-hw5",
             imgL: "../assets/images/thumbnail-large.png",
@@ -35,7 +35,7 @@ if (!localStorage.getItem('projects')) {
         },
         {
             id: "project4",
-            title: "Project 4 Title",
+            title: "Project 4 Local",
             languages: ["Python", "C"],
             repo: "https://github.com/Julie0827/cse134-hw5",
             imgL: "../assets/images/thumbnail-large.png",
@@ -46,7 +46,7 @@ if (!localStorage.getItem('projects')) {
         },
         {
             id: "project5",
-            title: "Project 5 Title",
+            title: "Project 5 Local",
             languages: ["C++", "Python"],
             repo: "https://github.com/Julie0827/cse134-hw5",
             imgL: "../assets/images/thumbnail-large.png",
@@ -57,7 +57,7 @@ if (!localStorage.getItem('projects')) {
         },
         {
             id: "project6",
-            title: "Project 6 Title",
+            title: "Project 6 Local",
             languages: ["Python", "JavaScript"],
             repo: "https://github.com/Julie0827/cse134-hw5",
             imgL: "../assets/images/thumbnail-large.png",
