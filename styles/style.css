@@ -627,11 +627,20 @@ h2 {
 }
 
 @media (max-width: 480px) {
+    .main-nav {
+        padding: 1rem 0;
+    }
+
     .nav-link {
         display: none;
     }
 
+    .setting {
+        padding: 0;
+    }
+
     .search-sidebar {
+        left: 1rem;
         top: 5.5rem;
     }
 
