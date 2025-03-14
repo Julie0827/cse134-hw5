@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const loadLocal = document.getElementById('load-local');
     const loadRemote = document.getElementById('load-remote');
+    const loadingMessage = document.getElementById('loading-message');
     const projectsContainer = document.getElementById('projects');
     const projectNav = document.getElementById('project-nav');
 
@@ -26,6 +27,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         isLoading = true;
 
+        loadingMessage.classList.remove('hidden');
+
         projectsContainer.innerHTML = '';
         projectNav.innerHTML = '';
 
@@ -38,6 +41,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const projects = await response.json();
 
+            loadingMessage.classList.add('hidden');
+            
             displayProjects(projects);
         } catch (error) {
             console.error("Error:", error.message || error);

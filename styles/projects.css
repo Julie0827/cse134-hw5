@@ -13,6 +13,21 @@
     margin-bottom: 2rem;
 }
 
+#loading-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+#loading-message p {
+    font-size: 1.5rem;
+}
+
+#loading-message img {
+    width: 5rem;
+}
+
 #project-nav {
     width: 80%;
     padding: 0;
