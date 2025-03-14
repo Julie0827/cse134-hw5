@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchBox = document.querySelector('.search-box');
     const searchSidebar = document.querySelector('.search-sidebar');
     const resultsContainer = document.querySelector('.search-results-container');
+    const resultsNotFound = document.querySelector('.search-not-found');
     const dropdownNavBtn = document.querySelector('.dropdown-nav-btn');
 
     const pages = ['index.html', 'about.html', 'projects.html', 'resume.html', 'contact.html'];
@@ -72,9 +73,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         if (searchResults.length === 0) {
-            resultsContainer.innerHTML = '<p>No results found</p><img src="assets/images/search-not-found.png" alt="3D illustration of a bored girl sitting cross-legged with a laptop on her lap">';
+            resultsContainer.classList.add('hidden');
+            searchSidebar.setAttribute('data-no-results', '');
+            resultsNotFound.classList.remove('hidden');
             return;
         }
+
+        resultsNotFound.classList.add('hidden');
+        searchSidebar.removeAttribute('data-no-results');
+        resultsContainer.classList.remove('hidden');
 
         searchResults.forEach(result => {
             let resultItem = document.createElement('div');

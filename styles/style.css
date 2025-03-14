@@ -363,7 +363,7 @@ h2 {
     background-color: var(--background-color-secondary);
 }
 
-.search-sidebar:has(img) {
+.search-sidebar[data-no-results] {
     align-items: center;
     overflow-y: hidden;
 }
@@ -381,7 +381,11 @@ h2 {
     justify-content: flex-start;
 }
 
-.search-results-container:has(img) {
+.search-not-found {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     gap: 2vh;
 }
@@ -423,7 +427,7 @@ h2 {
     width: 35%;
 }
 
-.search-sidebar:has(img) p {
+.search-sidebar[data-no-results] p {
     font-size: max(1.8rem, 36px);
     font-weight: bold;
     white-space: nowrap;
@@ -575,7 +579,7 @@ h2 {
         height: 60%;
     }
 
-    .search-sidebar:has(img) p {
+    .search-sidebar[data-no-results] p {
         font-size: 1.6rem;
     }
 
