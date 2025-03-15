@@ -1,5 +1,3 @@
-@import url("variables.css");
-
 #about-me-container {
     display: flex;
     flex-direction: column;

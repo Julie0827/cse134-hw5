@@ -1,5 +1,3 @@
-@import url("variables.css");
-
 #my-name {
     color: var(--main-color, pink);
 }

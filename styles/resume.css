@@ -1,5 +1,3 @@
-@import url("variables.css");
-
 #resume-container {
     display: flex;
     flex-direction: column;
