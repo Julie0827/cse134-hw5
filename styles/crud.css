@@ -34,6 +34,7 @@ button {
     font-family: var(--font-button);
     font-weight: bold;
     text-transform: uppercase;
+    color: var(--text-primary-color, black);
     box-shadow: var(--shadow-button);
 }
 
