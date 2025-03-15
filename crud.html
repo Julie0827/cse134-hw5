@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD | Julie</title>
+    <link rel="stylesheet" href="styles/style.css" media="screen" type="text/css">
+    <link rel="stylesheet" href="styles/crud.css" media="screen" type="text/css">
+    <script src="scripts/crud.js" defer></script>
+</head>
+<body id="crud-body">
+    <h1>To-Do List</h1>
+
+    <form>
+        <input type="text" id="task-input" maxlength="100" placeholder="Enter a task" required>
+        <output id="error-message" class="hidden"></output>
+        <button type="submit" id="create-btn">Create</button>
+    </form>
+
+    <div id="tasks-container"></div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+#crud-body {
+    padding: 4rem;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    position: relative;
+}
+
+#task-input {
+    width: 35%;
+    min-width: 250px;
+    border: 2px solid var(--main-color, pink);
+    border-radius: 99px;
+    padding: 0.7rem 1rem;
+}
+
+#error-message {
+    color: var(--warning-color, red);
+    position: absolute;
+    bottom: -1.5rem;
+}
+
+button {
+    padding: 0.8rem 1rem;
+    border: none;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    background: var(--gradient-primary);
+    font-family: var(--font-button);
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: var(--shadow-button);
+}
+
+button:hover {
+    background: var(--gradient-secondary);
+}
+
+button:active {
+    box-shadow: var(--shadow-button-active);
+    transform: scale(0.95);
+}
+
+#tasks-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.task-item {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 2rem 2rem 1.5rem;
+}
+
+.task-content {
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.buttons-container {
+    display: flex;
+    gap: 0.5rem;
+}
+
+@media(max-width: 800px) {
+    .task-item {
+        width: 100%;
+    }
+}
