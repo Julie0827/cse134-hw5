@@ -110,11 +110,12 @@ header {
     font-weight: bold;
 }
 
+.dropdown-nav-btn {
+    display: none;
+}
+
 .dropdown-nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
+    display: none;
     padding: 1.5rem 2rem;
     background-color: var(--main-color, pink);
     position: absolute;
@@ -466,12 +467,6 @@ h2 {
                 var(--gradient-secondary, linear-gradient(45deg, #ff8c96, #fbc8d4));
 }
 
-.dropdown-nav-btn {
-    display: none;
-    height: 2.8rem;
-    cursor: pointer;
-}
-
 @media (min-width: 1900px) {
     html {
         font-size: 22.5px;
@@ -649,6 +644,15 @@ h2 {
 
     .dropdown-nav-btn {
         display: block;
+        height: 2.8rem;
+        cursor: pointer;
+    }
+
+    .dropdown-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
     }
 
     .setting {
