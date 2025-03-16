@@ -85,7 +85,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const errorOutput = document.getElementById('error-message');
 
         if (input.value && !rx.test(input.value)) {
-            console.log("error detected");
             const invalidChar = [...input.value].find(char => !new RegExp(rx).test(char));
             
             errorOutput.textContent = `Invalid character '${invalidChar}' detected.`;
