@@ -33,15 +33,11 @@ class ProjectCard extends HTMLElement {
         sourceLarge.media = '(min-width: 1000px)';
         sourceLarge.srcset = project.imgL;
 
-        const sourceMedium = document.createElement('source');
-        sourceMedium.media = '(min-width: 600px)';
-        sourceMedium.srcset = project.imgM;
-
         const img = document.createElement('img');
-        img.src = project.imgS;
+        img.src = project.imgM;
         img.alt = project.alt;
 
-        picture.append(sourceLarge, sourceMedium, img);
+        picture.append(sourceLarge, img);
 
         const description = document.createElement('p');
         description.textContent = project.description;
@@ -60,7 +56,7 @@ class ProjectCard extends HTMLElement {
             return false;
         }
 
-        const requiredFields = ['id', 'title', 'languages', 'repo', 'imgL', 'imgM', 'imgS', 'alt', 'description'];
+        const requiredFields = ['id', 'title', 'languages', 'repo', 'imgL', 'imgM', 'alt', 'description'];
         
         for (const field of requiredFields) {
             if (!project[field]) {
