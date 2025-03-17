@@ -33,7 +33,7 @@ const Projects = [
         id: "project4",
         title: "To Do List",
         languages: ["HTML", "CSS", "JavaScript"],
-        repo: "https://github.com/Julie0827/cse134-hw5",
+        repo: "https://github.com/Julie0827/temporary",
         imgL: "../assets/images/project4L.png",
         imgM: "../assets/images/project4M.png",
         alt: "To Do List Page",
